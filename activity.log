@@ -1,0 +1,44 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 146-011-104
+INFO:root:2025-08-14 00:22:19.151943: Map plotted
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:22:19] "GET /protrack/map HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:22:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:root:2025-08-14 00:24:16.418769: Geofence request 'Test Zone' created
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:24:16] "POST /admin/request_geofence HTTP/1.1" 200 -
+INFO:root:2025-08-14 00:25:43.135541: Registered IMEI 999999999999999 for driver Eve
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:25:43] "POST /admin/register_imei HTTP/1.1" 200 -
+INFO:root:2025-08-14 00:26:12.716068: Map plotted
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:26:12] "GET /protrack/map HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 146-011-104
+INFO:werkzeug: * Detected change in 'c:\\Users\\paild\\thumbworx\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 146-011-104
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:55:13] "[33mGET /protrack/map HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:55:14] "[33mGET /protrack/map HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:55:47] "GET /map HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:56:10] "[31m[1mGET /delivery/request HTTP/1.1[0m" 405 -
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:56:22] "GET /delivery/assign HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 08:56:38] "GET /activity_logs HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\paild\\thumbworx\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 146-011-104
+INFO:werkzeug:127.0.0.1 - - [14/Aug/2025 09:00:49] "GET /activity_logs HTTP/1.1" 200 -
