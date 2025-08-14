@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, request, jsonify, render_template_string
 import osmnx as ox
 import networkx as nx
