@@ -108,17 +108,35 @@ def plot_map():
 @app.route("/delivery/request", methods=["POST"])
 def add_delivery():
     data = request.json
-    delivery = {
-        "id": len(deliveries)+1,
-        "lat": data['lat'],
-        "lon": data['lon'],
-        "address": data.get('address','Unknown'),
-        "assigned_driver": None,
-        "requested_time": datetime.utcnow()
-    }
-    deliveries.append(delivery)
-    log_activity(f"New delivery request {delivery['id']} at {delivery['lat']},{delivery['lon']}")
-    return jsonify({"status":"success","delivery":delivery})
+    added = []
+
+    if isinstance(data, list):  
+        for d in data:
+            delivery = {
+                "id": len(deliveries)+1,
+                "lat": d['lat'],
+                "lon": d['lon'],
+                "address": d.get('address','Unknown'),
+                "assigned_driver": None,
+                "requested_time": datetime.utcnow()
+            }
+            deliveries.append(delivery)
+            log_activity(f"New delivery request {delivery['id']} at {delivery['lat']},{delivery['lon']}")
+            added.append(delivery)
+        return jsonify({"status": "success", "deliveries": added})
+    else:  # single delivery
+        delivery = {
+            "id": len(deliveries)+1,
+            "lat": data['lat'],
+            "lon": data['lon'],
+            "address": data.get('address','Unknown'),
+            "assigned_driver": None,
+            "requested_time": datetime.utcnow()
+        }
+        deliveries.append(delivery)
+        log_activity(f"New delivery request {delivery['id']} at {delivery['lat']},{delivery['lon']}")
+        return jsonify({"status":"success","delivery":delivery})
+
 
 @app.route("/delivery/assign", methods=["GET"])
 def assign_all():
@@ -170,6 +188,38 @@ def get_logs():
     with open("activity.log") as f:
         logs = f.readlines()
     return jsonify({"logs": logs[-50:]})
+
+@app.route("/driver/add", methods=["POST"])
+def add_driver():
+    data = request.json
+    if isinstance(data, list): 
+        added = []
+        for d in data:
+            driver = {
+                "id": len(drivers) + 1,
+                "imei": d.get("imei", "000000000000000"),
+                "driver": d["driver"],
+                "lat": d["lat"],
+                "lon": d["lon"],
+                "current_load": 0
+            }
+            drivers.append(driver)
+            log_activity(f"Added driver {driver['driver']}")
+            added.append(driver)
+        return jsonify({"status": "success", "drivers": added})
+    else:  # single driver
+        driver = {
+            "id": len(drivers) + 1,
+            "imei": data.get("imei", "000000000000000"),
+            "driver": data["driver"],
+            "lat": data["lat"],
+            "lon": data["lon"],
+            "current_load": 0
+        }
+        drivers.append(driver)
+        log_activity(f"Added driver {driver['driver']}")
+        return jsonify({"status": "success", "driver": driver})
+
 
 # -----------------------------
 # Run Flask
